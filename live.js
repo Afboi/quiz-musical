@@ -24,6 +24,19 @@
 
   function showScene(id) {
     scenes.forEach(scene => scene.classList.toggle("active", scene.id === id));
+    const isQuestion = id === "questionScene";
+    stage.classList.toggle("question-active", isQuestion);
+    // Reduce video/audio volume when the question card appears.
+    if (isQuestion) setPlaybackVolume(20);
+    else if (id === "roundIntro") setPlaybackVolume(100);
+  }
+
+  function setPlaybackVolume(percent) {
+    const level = Math.max(0, Math.min(100, Number(percent))) / 100;
+    audio.volume = level;
+    if (ytPlayer && typeof ytPlayer.setVolume === "function") {
+      try { ytPlayer.setVolume(Math.round(level * 100)); } catch (_) {}
+    }
   }
   function setConnected(ok) {
     connection.classList.toggle("ok", ok);
@@ -99,6 +112,7 @@
     clearTimeout(introTimer);
     stopAudio();
     stopYouTube();
+    setPlaybackVolume(100);
     currentIndex = data.index;
     const q = window.QUIZ_QUESTIONS[currentIndex];
     if (!q) return;
