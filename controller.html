@@ -37,7 +37,7 @@
       <div class="panel-heading"><span class="panel-number">03</span><div><h2>Configuración</h2><p>Tiempo de introducción musical</p></div></div>
       <label class="setting-label" for="introSeconds">Segundos antes de mostrar la pregunta</label>
       <div class="setting-row"><input id="introSeconds" type="number" min="1" max="60" value="8"><span>segundos</span><button id="saveSettings" class="btn btn-small">Guardar</button></div>
-      <p class="help-note">Los audios son opcionales. Coloca los archivos en <code>media/</code> con los nombres indicados en <code>questions.js</code>.</p>
+      <p class="help-note">Para reproducir videoclips, añade el ID de YouTube de cada canción en <code>youtubeId</code> dentro de <code>questions.js</code>. Si queda vacío, se usa el audio local de <code>media/</code>. Los videos deben permitir reproducción incrustada.</p>
       <div class="utility-actions"><button id="showQuestionBtn" class="btn btn-quiet" disabled>Mostrar pregunta ahora</button><button id="resetBtn" class="btn btn-danger">Reiniciar juego</button></div>
     </section>
   </main>
