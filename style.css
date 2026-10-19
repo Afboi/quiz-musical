@@ -87,3 +87,13 @@ linear-gradient(135deg,#10091f,#1d1032 60%,#0b1628)}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:850px){.control-page{padding:16px}.control-layout{grid-template-columns:1fr}.settings-panel{grid-column:auto}.control-header{align-items:flex-start;flex-direction:column}.question-list{max-height:380px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+
+
+/* Reproductor de YouTube detrás de la interfaz del concurso */
+.youtube-layer{position:absolute;inset:0;z-index:-2;overflow:hidden;pointer-events:none;background:#080510;opacity:0;transition:opacity .45s ease}
+.youtube-layer.visible{opacity:1}
+.youtube-layer iframe{position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-width:177.78vh;min-height:100vh;transform:translate(-50%,-50%);border:0}
+.video-shade{position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(135deg,rgba(16,9,31,.76),rgba(16,9,31,.46) 55%,rgba(11,22,40,.78));opacity:0;transition:opacity .45s ease}
+.video-shade.visible{opacity:1}
+#stage.video-playing .stage-glow{opacity:.08}
+#stage.video-playing .equalizer{opacity:.08}
