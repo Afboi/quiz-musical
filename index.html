@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quiz Musical | Pantalla principal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="live-page">
+  <main id="stage" class="stage">
+    <div class="stage-glow glow-a"></div><div class="stage-glow glow-b"></div>
+    <div id="youtubeLayer" class="youtube-layer" aria-hidden="true"><div id="youtubePlayer"></div></div>
+    <div class="video-shade" aria-hidden="true"></div>
+    <div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+    <section id="welcome" class="welcome scene active">
+      <div class="eyebrow"><span class="pulse-dot"></span> ¡QUE COMIENCE EL JUEGO!</div>
+      <div class="music-icon">♫</div>
+      <h1>QUIZ <span>MUSICAL</span></h1>
+      <p>Escucha, recuerda… ¡y adivina!</p>
+      <div class="welcome-sticker sticker-one">♪</div><div class="welcome-sticker sticker-two">★</div>
+    </section>
+
+    <section id="roundIntro" class="round-intro scene">
+      <div class="round-number" id="roundNumber">PREGUNTA 01</div>
+      <div class="movie-art" id="movieArt"><span>♫</span></div>
+      <p class="movie-label">LA PELÍCULA DE ESTA RONDA</p>
+      <h2 id="movieTitle">¡Prepárate!</h2>
+      <div class="listen-bar"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <p class="listen-copy">ESCUCHA LA CANCIÓN</p>
+    </section>
+
+    <section id="questionScene" class="question-scene scene">
+      <div class="question-top"><span id="questionCounter">PREGUNTA 01 / 25</span><span class="live-tag"><i></i> EN JUEGO</span></div>
+      <div class="question-card">
+        <div class="question-kicker">¿TE SABES LA RESPUESTA?</div>
+        <h2 id="questionText">La pregunta aparecerá aquí</h2>
+        <div class="question-divider"><span>♫</span></div>
+        <p id="questionMovie">PELÍCULA</p>
+      </div>
+      <div class="question-footer"><span>PIENSA RÁPIDO</span><span>♪ QUIZ MUSICAL ♪</span></div>
+    </section>
+
+    <section id="standby" class="standby scene">
+      <div class="music-icon">♫</div><h2>¡SIGUIENTE RONDA!</h2><p>La música está por comenzar…</p>
+    </section>
+    <div id="connection" class="connection"><span></span> Conectando con la controladora</div>
+  </main>
+  <script src="questions.js"></script>
+  <script src="live.js"></script>
+</body>
+</html>

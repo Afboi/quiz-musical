@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quiz Musical | Controladora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="control-page">
+  <header class="control-header">
+    <div><div class="control-eyebrow">BACKSTAGE / CONTROL EN VIVO</div><h1>QUIZ <span>MUSICAL</span></h1></div>
+    <div class="connection-pill" id="controllerConnection"><span></span> Conectando…</div>
+  </header>
+
+  <main class="control-layout">
+    <section class="control-panel current-panel">
+      <div class="panel-heading"><span class="panel-number">01</span><div><h2>Ronda actual</h2><p>Controla lo que ve el público</p></div></div>
+      <div class="current-card">
+        <div class="current-meta" id="currentMeta">SIN RONDA ACTIVA</div>
+        <h3 id="currentMovie">¡Listos para jugar!</h3>
+        <p id="currentQuestion">Inicia la primera ronda para mostrar la animación y la canción.</p>
+      </div>
+      <div class="main-actions">
+        <button id="startBtn" class="btn btn-primary">▶ Iniciar primera ronda</button>
+        <button id="nextBtn" class="btn btn-next" disabled>⏭ Siguiente pregunta</button>
+        <button id="welcomeBtn" class="btn btn-quiet">⌂ Volver a pantalla inicial</button>
+      </div>
+      <p class="help-note">Al iniciar una ronda, la pantalla muestra la película y comienza el audio si existe. La pregunta aparece después de unos segundos y permanece hasta que avances.</p>
+    </section>
+
+    <section class="control-panel list-panel">
+      <div class="panel-heading"><span class="panel-number">02</span><div><h2>Lista de preguntas</h2><p>25 rondas · selecciona una para saltar</p></div></div>
+      <div id="questionList" class="question-list"></div>
+    </section>
+
+    <section class="control-panel settings-panel">
+      <div class="panel-heading"><span class="panel-number">03</span><div><h2>Configuración</h2><p>Tiempo de introducción musical</p></div></div>
+      <label class="setting-label" for="introSeconds">Segundos antes de mostrar la pregunta</label>
+      <div class="setting-row"><input id="introSeconds" type="number" min="1" max="60" value="15"><span>segundos</span><button id="saveSettings" class="btn btn-small">Guardar</button></div>
+      <p class="help-note">Para reproducir videoclips, añade el ID de YouTube de cada canción en <code>youtubeId</code> dentro de <code>questions.js</code>. Si queda vacío, se usa el audio local de <code>media/</code>. Los videos deben permitir reproducción incrustada.</p>
+      <div class="utility-actions"><button id="showQuestionBtn" class="btn btn-quiet" disabled>Mostrar pregunta ahora</button><button id="resetBtn" class="btn btn-danger">Reiniciar juego</button></div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="questions.js"></script>
+  <script src="controller.js"></script>
+</body>
+</html>
